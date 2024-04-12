@@ -79,12 +79,11 @@ func calculator() {
 		fmt.Scan(&inputOperand)
 
 		firstOperand, err = strconv.ParseFloat(inputOperand, 64)
-		if err != nil {
-			fmt.Println("Please enter a numeric operand")
-			continue
-		} else {
+		if err == nil {
 			break
 		}
+
+		fmt.Println("Please enter a numeric operand")
 	}
 
 	for {
@@ -102,7 +101,7 @@ func calculator() {
 
 		secondOperand, err = strconv.ParseFloat(inputOperand, 64)
 		if err != nil {
-			fmt.Println("Please enter a numeric operand")
+			fmt.Println("Please enter a numeric operand\n")
 			continue
 		}
 
